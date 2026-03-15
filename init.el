@@ -63,14 +63,15 @@
 ;; Packages
 ;; Without this comment Emacs25 adds (package-initialize) here
 (setq package-archives
-      '(("melpa" . "http://melpa.org/packages/")
-        ("gnu" . "http://elpa.gnu.org/packages/")
-        ("org" . "http://orgmode.org/elpa/")
-        ("melpa-stable" . "http://stable.melpa.org/packages/")))
+      '(("melpa" . "https://melpa.org/packages/")
+        ("gnu" . "https://elpa.gnu.org/packages/")
+        ("org" . "https://orgmode.org/elpa/")
+        ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
 ;; Initialize packages
 (unless (bound-and-true-p package--initialized) ; To avoid warnings in 27
   (setq package-enable-at-startup nil)          ; To prevent initializing twice
+  (setq package-check-signature nil)            ; GPG keyring may be outdated on clusters
   (package-initialize))
 
 ;; Setup `use-package'
