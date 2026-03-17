@@ -92,10 +92,12 @@
 
 ;; Environment
 (use-package exec-path-from-shell
+  :defer nil
   :init
   (setq exec-path-from-shell-check-startup-files nil
         exec-path-from-shell-variables '("PATH" "MANPATH" "PYTHONPATH" "GOPATH")
         exec-path-from-shell-arguments '("-l"))
+  :config
   (exec-path-from-shell-initialize))
 
 (require 'init-better-defaults)

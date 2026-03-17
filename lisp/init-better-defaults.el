@@ -76,8 +76,7 @@
 (delete-selection-mode t)
 
 ;; display line number
-(global-linum-mode)
-(setq linum-format "%4d ")
+(global-display-line-numbers-mode)
 
 ;; highlight current line
 (global-hl-line-mode nil)
